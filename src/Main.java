@@ -13,12 +13,18 @@ public class Main {
         int option1=-1;
 
         while (option1 < 0 || 2 < option1 ) {
-
-            option1 = Integer.parseInt(myObj.nextLine());
-
+            try {
+                option1 = myObj.nextInt();
+            }
+            catch(Exception e) {
+                myObj.nextLine();
+                System.out.println("Please enter an Integer");
+                continue;
+            }
             if (option1 < 0 || 2 < option1 ) {
                 System.out.println("Incorrect option");
             }
+
         }
 
         int option2 = (int)(Math.random() * 3);
